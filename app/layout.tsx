@@ -1,7 +1,7 @@
 import { Courier_Prime } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 
 const courierPrime = Courier_Prime({
   subsets: ['latin'],
@@ -26,15 +26,13 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/site.webmanifest',
-  themeColor: '#ffffff',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
   other: {
     'msapplication-TileColor': '#da532c',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#ffffff', // Move themeColor here
 }
 
 export default function RootLayout({
